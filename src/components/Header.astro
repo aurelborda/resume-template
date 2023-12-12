@@ -1,0 +1,139 @@
+---
+import type {
+  Name,
+  Contact,
+  Link as LinkEntry,
+  Header,
+  Query,
+  Experience,
+} from '@type/resume'
+import Link from '@components/Link.astro'
+
+interface Props {
+  data: {
+    name: Name
+    contact: Contact
+    links: LinkEntry[]
+    header: Header
+    latestRole: Experience
+    featured: Query
+  }
+}
+
+const { data } = Astro.props
+const { name, contact, links, header, latestRole, featured } = data
+const isActive = latestRole?.active === true
+---
+
+<header class="pt-5 pb-7">
+  <div class="container">
+    <h1 class="text-xl font-bold">
+      {`${name.first} ${name.last}`}
+    </h1>
+
+    <h2 class="leading-tight">{header.role}</h2>
+
+    <ul class="flex gap-4 mt-3 text-sm font-semibold">
+      <li>
+        <Link
+          class="flex items-center gap-2"
+          scheme="mailto"
+          url={contact.email}
+          newTab={true}
+          icon="email"
+        >
+          <span>{contact.email}</span>
+        </Link>
+      </li>
+
+      <li>
+        <Link
+          class="flex items-center gap-2"
+          scheme="tel"
+          url={contact.tel}
+          newTab={true}
+          icon="phone"
+        >
+          <span>{contact.tel}</span>
+        </Link>
+      </li>
+
+      {
+        links.map((item) => (
+          <li>
+            <Link
+              class="flex items-center gap-2"
+              url={item.url}
+              newTab={true}
+              icon={item.type}
+            >
+              <span>{item.title}</span>
+            </Link>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="grid grid-cols-2 gap-x-5 mt-4 text-xs leading-normal">
+      <div class="bg-white px-5 py-4 rounded-2xl">
+        <div class="flex gap-3">
+          <div class="py-1 pr-3 shrink-0 font-semibold header-highlight-border">
+            {isActive === true ? 'Current' : 'Previous'} role
+          </div>
+
+          <div class="py-1">
+            {latestRole.role} at {latestRole.company.name}
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <div class="py-1 pr-3 shrink-0 font-semibold header-highlight-border">
+            Experience
+          </div>
+
+          <div class="py-1">
+            {header.experience.join(', ')}
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <div class="py-1 pr-3 shrink-0 font-semibold header-highlight-border">
+            Technologies
+          </div>
+
+          <div class="py-1">
+            {header.technologies.join(', ')}
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white px-5 py-4 rounded-2xl">
+        <div class="py-1 font-semibold">
+          {featured.question}&hellip;
+        </div>
+
+        <div class="pt-1">
+          {featured.answer}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style lang="sass">
+  header
+    background-color: var(--header-bg-color)
+
+  .header-highlight-border
+    border-color: var(--header-highlight-border-color)
+    @apply border-r-2
+    @apply border-solid
+    @apply basis-[5.75rem]
+</style>
+
+<style lang="sass" is:global>
+  header
+    // Make icon size smaller to match the other icons
+    .fa-phone
+      @apply text-xs
+</style>
