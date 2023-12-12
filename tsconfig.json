@@ -7,6 +7,7 @@
       "@data/*": ["src/data/*"],
       "@layouts/*": ["src/layouts/*"],
       "@type/*": ["src/types/*"],
+      "@util/*": ["src/util/*"],
     }
   }
 }
