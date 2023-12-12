@@ -1,9 +1,116 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import Header from '@components/Header.astro'
+import Experience from '@components/Experience.astro'
+import Education from '@components/Education.astro'
+import Snippet from '@components/Snippet.astro'
+import Query from '@components/Query.astro'
+import data from '@data/resume'
+
+const {
+  name,
+  contact,
+  links,
+  header,
+  experience,
+  education,
+  snippets,
+  questions,
+  interests,
+  languages,
+} = data
+
+const [latestRole] = experience
+const [featuredQuestion] = questions.filter((item) => item.featured === true)
 ---
 
-<Layout title="">
-  <main>//</main>
+<Layout title={`${name.first} ${name.last} - Résumé`}>
+  <main>
+    <Header
+      data={{
+        name,
+        header,
+        contact,
+        links,
+        latestRole,
+        featured: featuredQuestion,
+      }}
+    />
+
+    <section class="pt-8">
+      <div class="container container--loose">
+        <header>
+          <h3 class="text-xl font-semibold">Work experience</h3>
+        </header>
+
+        {
+          experience.map((item) => (
+            <article class="pt-6">
+              <Experience data={item} />
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="pt-8">
+      <div class="container container--loose">
+        <header>
+          <h3 class="text-xl font-semibold">Education</h3>
+        </header>
+
+        {
+          education.map((item) => (
+            <article class="pt-6">
+              <Education data={item} />
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="pt-8">
+      <div class="container container--loose">
+        <header>
+          <h3 class="text-xl font-semibold">Snippets</h3>
+        </header>
+
+        {
+          snippets.map((item) => (
+            <article class="pt-6 text-sm">
+              <Snippet data={item} />
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="py-8">
+      <div class="container container--loose">
+        <header>
+          <h3 class="text-xl font-semibold">More about me</h3>
+        </header>
+
+        <div class="grid grid-cols-2 gap-x-5">
+          {
+            questions.map(({ question, answer }) => (
+              <article class="pt-6 text-sm">
+                <Query title={`${question}&hellip;`} content={answer} />
+              </article>
+            ))
+          }
+
+          <article class="pt-6 text-sm">
+            <Query title="Interests" content={interests} />
+          </article>
+
+          <article class="pt-6 text-sm">
+            <Query title="Languages spoken" content={languages.join(', ')} />
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
 
 <style lang="sass"></style>
