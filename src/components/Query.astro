@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string
+  content: string
+}
+
+const { title, content } = Astro.props
+---
+
+<>
+  <div class="font-semibold" set:html={title} />
+
+  <div class="mt-2 leading-tight">{content}</div>
+</>
+
+<style lang="sass"></style>
