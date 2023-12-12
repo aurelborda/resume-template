@@ -1,0 +1,30 @@
+---
+import type { Snippet } from '@type/resume'
+import Link from '@components/Link.astro'
+
+interface Props {
+  data: Snippet
+}
+
+const { data } = Astro.props
+const { title, url, description } = data
+const hasUrl = url.length > 0
+---
+
+<>
+  <div class="font-semibold">
+    {
+      hasUrl === true ? (
+        <Link url={url} newTab={true}>
+          {title}
+        </Link>
+      ) : (
+        title
+      )
+    }
+  </div>
+
+  <div class="mt-2 leading-tight">{description}</div>
+</>
+
+<style lang="sass"></style>
