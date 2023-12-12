@@ -82,7 +82,7 @@ const isActive = latestRole?.active === true
           </div>
 
           <div class="py-1">
-            {latestRole.role} at {latestRole.company.name}
+            {latestRole?.role} at {latestRole?.company.name}
           </div>
         </div>
 
@@ -109,11 +109,11 @@ const isActive = latestRole?.active === true
 
       <div class="bg-white px-5 py-4 rounded-2xl">
         <div class="py-1 font-semibold">
-          {featured.question}&hellip;
+          {featured?.question}&hellip;
         </div>
 
         <div class="pt-1">
-          {featured.answer}
+          {featured?.answer}
         </div>
       </div>
     </div>
