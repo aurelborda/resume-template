@@ -1,0 +1,25 @@
+---
+import icons from '@data/icons'
+
+interface Props {
+  class?: string
+  scheme?: string
+  url: string
+  newTab?: boolean
+  icon?: string
+}
+
+const { class: className, scheme = '', url, newTab, icon } = Astro.props
+const href = scheme.length > 0 ? `${scheme}:${url}` : url
+const target = newTab === true ? '_blank' : ''
+const iconClassName = Object.hasOwn(icons, icon as string)
+  ? icons[icon as string]
+  : ''
+---
+
+<a class={className} href={href} target={target}>
+  {icon && <icon class={iconClassName} />}
+  <slot />
+</a>
+
+<style lang="sass"></style>
