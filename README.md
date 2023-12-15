@@ -25,7 +25,7 @@ Find more commands in the [official documentation](https://docs.astro.build/en/r
 See the `sample-data` branch for an example résumé with sample data, or scroll below for a preview image.
 
 > [!IMPORTANT]
-> When creating a PDF after building the project for production, you may sometimes need to correct the layout of the pages using CSS.
+> When creating a PDF after building the project for production, you may sometimes need to correct the layout of the pages using CSS. For example, you want to move the title of a work experience that is at the bottom of a page to a new page.
 
 > [!TIP]
 > Add the CSS style `page-break-before: always` or `page-break-after: always` to move the content to a new page.
