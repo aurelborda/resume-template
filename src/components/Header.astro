@@ -22,7 +22,7 @@ interface Props {
 
 const { data } = Astro.props
 const { name, contact, links, header, latestRole, featured } = data
-const isActive = latestRole?.active === true
+const isActive: boolean = latestRole?.active === true
 ---
 
 <header class="pt-5 pb-7">
@@ -59,15 +59,15 @@ const isActive = latestRole?.active === true
       </li>
 
       {
-        links.map((item) => (
+        links.map(({ type, title, url }) => (
           <li>
             <Link
               class="flex items-center gap-2"
-              url={item.url}
+              url={url}
               newTab={true}
-              icon={item.type}
+              icon={type}
             >
-              <span>{item.title}</span>
+              <span>{title}</span>
             </Link>
           </li>
         ))
@@ -78,7 +78,7 @@ const isActive = latestRole?.active === true
       <div class="bg-white px-5 py-4 rounded-2xl">
         <div class="flex gap-3">
           <div class="py-1 pr-3 shrink-0 font-semibold header-highlight-border">
-            {isActive === true ? 'Current' : 'Previous'} role
+            {isActive ? 'Current' : 'Previous'} role
           </div>
 
           <div class="py-1">

@@ -9,16 +9,19 @@ interface Props {
   icon?: string
 }
 
+type AnchorTargetAttribute = astroHTML.JSX.HTMLAttributeAnchorTarget
+
 const { class: className, scheme = '', url, newTab, icon } = Astro.props
-const href = scheme.length > 0 ? `${scheme}:${url}` : url
-const target = newTab === true ? '_blank' : ''
-const iconClassName = Object.hasOwn(icons, icon as string)
-  ? icons[icon as string]
+const href: string = scheme.length > 0 ? `${scheme}:${url}` : url
+const target: AnchorTargetAttribute = newTab === true ? '_blank' : '_self'
+const iconClassName: string = Object.hasOwn(icons, icon as string)
+  ? (icons[icon as string] as string)
   : ''
 ---
 
 <a class={className} href={href} target={target}>
   {icon && <icon class={iconClassName} />}
+
   <slot />
 </a>
 

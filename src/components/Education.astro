@@ -8,29 +8,27 @@ interface Props {
 
 const { data } = Astro.props
 const { active, institution, date } = data
-const isActive = active === true
+const isActive: boolean = active === true
 ---
 
-<>
-  <div class="flex items-center text-sm">
-    <div class="grow flex gap-1 font-semibold">
-      <span>{institution.title}</span>
+<div class="flex items-center text-sm">
+  <div class="grow flex gap-1 font-semibold">
+    <span>{institution.title}</span>
 
-      <icon class="ml-1 self-center fa-solid fa-graduation-cap"></icon>
-    </div>
-
-    <div class="shrink-0 font-normal text-xs">
-      {formatDate(date.start)} - {isActive ? 'Present' : formatDate(date.end)}
-    </div>
+    <icon class="ml-1 self-center fa-solid fa-graduation-cap"></icon>
   </div>
 
-  <div class="mt-1 text-sm">
-    <div>{institution.domain}</div>
+  <div class="shrink-0 font-normal text-xs">
+    {formatDate(date.start)} - {isActive ? 'Present' : formatDate(date.end)}
   </div>
+</div>
 
-  <ul class="mt-3 list-disc list-inside text-sm leading-tight">
-    {institution.description.map((item) => <li class="mt-2">{item}.</li>)}
-  </ul>
-</>
+<div class="mt-1 text-sm">
+  <div>{institution.domain}</div>
+</div>
+
+<ul class="mt-3 list-disc list-inside text-sm leading-tight">
+  {institution.description.map((item) => <li class="mt-2">{item}.</li>)}
+</ul>
 
 <style lang="sass"></style>
