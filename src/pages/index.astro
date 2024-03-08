@@ -1,4 +1,8 @@
 ---
+import type {
+  Experience as ExperienceType,
+  Query as QueryType,
+} from '@type/resume'
 import Layout from '@layouts/Layout.astro'
 import Header from '@components/Header.astro'
 import Experience from '@components/Experience.astro'
@@ -32,8 +36,8 @@ const [featuredQuestion] = questions.filter((item) => item.featured === true)
         header,
         contact,
         links,
-        latestRole,
-        featured: featuredQuestion,
+        latestRole: latestRole as ExperienceType,
+        featured: featuredQuestion as QueryType,
       }}
     />
 
