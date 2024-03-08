@@ -1,22 +1,21 @@
 # Résumé template
 
-A résumé template for personal use, built with Astro and customized with Tailwind CSS.
+A résumé template for personal use, built with Astro and customized with Tailwind CSS on Bun JavaScript runtime.
 
 ## Development
 
-> [!NOTE]
-> `pnpm` was used to install the dependencies, but `npm` or `Yarn` can also be used.
-
-To see the difference between `pnpm` and `npm` commands, see the official documentation [here](https://pnpm.io/pnpm-cli#commands).
+> [!NOTE] > `bun` was used to install the dependencies, but `npm`, `Yarn` or `pnpm` can also be used.
 
 Run a command from the root of the project, from a terminal:
 
-| Command            | Action                                           |
-| :----------------- | :----------------------------------------------- |
-| `pnpm install`     | Install project dependencies                     |
-| `pnpm dev`         | Start a local dev server at `localhost:4321`     |
-| `pnpm build`       | Build project for production to `./dist/`        |
-| `pnpm preview`     | Preview the build locally, before deploying      |
+| Command           | Action                                         |
+| :---------------- | :--------------------------------------------- |
+| `bun install`     | Install project dependencies                   |
+| `bun run dev`     | Start a local dev server at `localhost:4321`   |
+| `bun run build`   | Build project for production to `./dist/`      |
+| `bun run preview` | Preview the build locally, before deploying    |
+| `bun run lint`    | Apply a consistent coding style to the project |
+| `bun run svgo`    | Optimize SVG assets for the project            |
 
 Find more commands in the [official documentation](https://docs.astro.build/en/reference/cli-reference) provided by Astro to further develop, build, and preview the project from a terminal window.
 

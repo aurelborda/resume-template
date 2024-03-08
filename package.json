@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "bunx prettier --plugin=prettier-plugin-astro --check ./",
+    "lint": "bunx prettier --plugin=prettier-plugin-astro --write ./",
     "svgo": "svgo ./src/assets/*"
   },
   "dependencies": {
