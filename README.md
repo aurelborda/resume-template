@@ -4,7 +4,8 @@ A résumé template for personal use, built with Astro and customized with Tailw
 
 ## Development
 
-> [!NOTE] > `bun` was used to install the dependencies, but `npm`, `Yarn` or `pnpm` can also be used.
+> [!NOTE]
+> `bun` was used to install the dependencies, but `npm`, `Yarn` or `pnpm` can also be used.
 
 Run a command from the root of the project, from a terminal:
 
