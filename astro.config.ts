@@ -1,14 +1,15 @@
+import type { AstroUserConfig } from 'astro'
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
   devToolbar: {
-    // enabled: false,
+    enabled: false,
   },
   integrations: [
     tailwind({
       //
     }),
   ],
-})
+} satisfies AstroUserConfig)
