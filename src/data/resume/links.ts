@@ -1,4 +1,4 @@
-import type { Link } from '@type/resume'
+import type { Link } from '@/types/resume'
 
 const props: Link[] = []
 
