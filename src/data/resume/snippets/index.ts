@@ -1,4 +1,4 @@
-import type { Snippet } from '@type/resume'
+import type { Snippet } from '@/types/resume'
 import item1 from './item-1'
 import item2 from './item-2'
 

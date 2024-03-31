@@ -1,4 +1,4 @@
-import type { Header } from '@type/resume'
+import type { Header } from '@/types/resume'
 import role from './role'
 import experience from './experience'
 import technologies from './technologies'
