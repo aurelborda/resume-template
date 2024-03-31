@@ -1,4 +1,4 @@
-import type { Experience } from '@type/resume'
+import type { Experience } from '@/types/resume'
 
 const props: Experience[] = []
 

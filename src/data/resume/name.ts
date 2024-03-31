@@ -1,4 +1,4 @@
-import type { Name } from '@type/resume'
+import type { Name } from '@/types/resume'
 
 const props: Name = {
   first: '',
