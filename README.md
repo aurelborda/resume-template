@@ -15,7 +15,7 @@ Run a command from the root of the project, from a terminal:
 | `bun run dev`     | Start a local dev server at `localhost:4321`   |
 | `bun run build`   | Build project for production to `./dist/`      |
 | `bun run preview` | Preview the build locally, before deploying    |
-| `bun run lint`    | Apply a consistent coding style to the project |
+| `bun run format`  | Apply a consistent coding style to the project |
 | `bun run svgo`    | Optimize SVG assets for the project            |
 
 Find more commands in the [official documentation](https://docs.astro.build/en/reference/cli-reference) provided by Astro to further develop, build, and preview the project from a terminal window.
