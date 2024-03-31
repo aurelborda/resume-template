@@ -1,4 +1,4 @@
-import type { Query } from '@type/resume'
+import type { Query } from '@/types/resume'
 
 const props: Query = {
   question: 'I like to work with people who',

@@ -1,4 +1,4 @@
-import type { Snippet } from '@type/resume'
+import type { Snippet } from '@/types/resume'
 
 const props: Snippet = {
   title: 'Re-imagining the opera of the future',
