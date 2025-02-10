@@ -23,38 +23,44 @@ const { title, description = '' } = Astro.props
   </body>
 </html>
 
-<style lang="sass" is:global>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap')
-  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css')
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
-  :root
-    font-family: 'DM Sans', sans-serif
-    font-synthesis: none
-    text-rendering: optimizeLegibility
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale
-    -webkit-text-size-adjust: 100%
+  :root {
+    font-family: 'DM Sans', sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 
-    --header-bg-color: #fceca5
-    --header-highlight-border-color: var(--header-bg-color)
-    --experience-highlight-bg-color: #b5eecb
+    --header-bg-color: #fceca5;
+    --header-highlight-border-color: var(--header-bg-color);
+    --experience-highlight-bg-color: #b5eecb;
+  }
 
-  body
-    margin: 0
-    min-width: 320px
-    @apply font-light
+  body {
+    margin: 0;
+    min-width: 320px;
+    @apply font-light;
+  }
 
-  .container
-    @apply px-5
+  .container {
+    @apply px-5;
 
-    &--loose
-      @apply px-10
+    &--loose {
+      @apply px-10;
+    }
+  }
 
-  @page
-    // size: A4
-    size: Letter portrait
-    margin: 0.5in 0
+  @page {
+    /* size: A4; */
+    size: Letter portrait;
+    margin: 0.5in 0;
+  }
 
-  @page:first
-    margin-top: 0
+  @page:first {
+    margin-top: 0;
+  }
 </style>

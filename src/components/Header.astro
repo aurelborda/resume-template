@@ -120,20 +120,20 @@ const isActive: boolean = latestRole?.active === true
   </div>
 </header>
 
-<style lang="sass">
-  header
-    background-color: var(--header-bg-color)
+<style>
+  header {
+    background-color: var(--header-bg-color);
 
-  .header-highlight-border
-    border-color: var(--header-highlight-border-color)
-    @apply border-r-2
-    @apply border-solid
-    @apply basis-[5.75rem]
-</style>
+    /* Make icon size smaller to match the other icons */
+    .fa-phone {
+      @apply text-xs;
+    }
+  }
 
-<style lang="sass" is:global>
-  header
-    // Make icon size smaller to match the other icons
-    .fa-phone
-      @apply text-xs
+  .header-highlight-border {
+    border-color: var(--header-highlight-border-color);
+    @apply border-r-2;
+    @apply border-solid;
+    @apply basis-[5.75rem];
+  }
 </style>
