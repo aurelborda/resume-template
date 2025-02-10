@@ -12,13 +12,13 @@ const isActive: boolean = active === true
 ---
 
 <div class="flex items-center text-sm">
-  <div class="grow flex gap-1 font-semibold">
+  <div class="flex grow gap-1 font-semibold">
     <span>{institution.title}</span>
 
-    <icon class="ml-1 self-center fa-solid fa-graduation-cap"></icon>
+    <icon class="fa-solid fa-graduation-cap ml-1 self-center"></icon>
   </div>
 
-  <div class="shrink-0 font-normal text-xs">
+  <div class="shrink-0 text-xs font-normal">
     {formatDate(date.start)} - {isActive ? 'Present' : formatDate(date.end)}
   </div>
 </div>
@@ -27,6 +27,6 @@ const isActive: boolean = active === true
   <div>{institution.domain}</div>
 </div>
 
-<ul class="mt-3 list-disc list-inside text-sm leading-tight">
+<ul class="mt-3 list-inside list-disc text-sm leading-tight">
   {institution.description.map((item) => <li class="mt-2">{item}.</li>)}
 </ul>
