@@ -1,4 +1,5 @@
 ---
+import type { HTMLAttributes } from 'astro/types'
 import icons from '@/data/icons'
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
   icon?: string
 }
 
-type AnchorTargetAttribute = astroHTML.JSX.HTMLAttributeAnchorTarget
+type AnchorTargetAttribute = HTMLAttributes<'a'>['target']
 
 const { class: className, scheme = '', url, newTab, icon } = Astro.props
 const href: string = scheme.length > 0 ? `${scheme}:${url}` : url
