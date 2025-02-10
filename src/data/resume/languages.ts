@@ -1,3 +1,8 @@
-const props: string[] = []
+const props: string[] = [
+  'French',
+  'Italian',
+  'Latinus (Latin)',
+  //
+]
 
 export default props
