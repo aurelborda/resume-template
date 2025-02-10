@@ -1,8 +1,7 @@
 {
   "recommendations": [
     "astro-build.astro-vscode",
-    "esbenp.prettier-vscode",
-    "Syler.sass-indented"
+    "esbenp.prettier-vscode"
   ],
   "unwantedRecommendations": []
 }
