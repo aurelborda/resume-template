@@ -25,7 +25,7 @@ const { name, contact, links, header, latestRole, featured } = data
 const isActive: boolean = latestRole?.active === true
 ---
 
-<header class="pt-5 pb-7">
+<header class="pb-7 pt-5">
   <div class="container">
     <h1 class="text-xl font-bold">
       {`${name.first} ${name.last}`}
@@ -33,7 +33,7 @@ const isActive: boolean = latestRole?.active === true
 
     <h2 class="leading-tight">{header.role}</h2>
 
-    <ul class="flex gap-4 mt-3 text-sm font-semibold">
+    <ul class="mt-3 flex gap-4 text-sm font-semibold">
       <li>
         <Link
           class="flex items-center gap-2"
@@ -74,10 +74,10 @@ const isActive: boolean = latestRole?.active === true
       }
     </ul>
 
-    <div class="grid grid-cols-2 gap-x-5 mt-4 text-xs leading-normal">
-      <div class="bg-white px-5 py-4 rounded-2xl">
+    <div class="mt-4 grid grid-cols-2 gap-x-5 text-xs leading-normal">
+      <div class="rounded-2xl bg-white px-5 py-4">
         <div class="flex gap-3">
-          <div class="py-1 pr-3 shrink-0 font-semibold header-highlight-border">
+          <div class="header-highlight-border shrink-0 py-1 pr-3 font-semibold">
             {isActive ? 'Current' : 'Previous'} role
           </div>
 
@@ -87,7 +87,7 @@ const isActive: boolean = latestRole?.active === true
         </div>
 
         <div class="flex gap-3">
-          <div class="py-1 pr-3 shrink-0 font-semibold header-highlight-border">
+          <div class="header-highlight-border shrink-0 py-1 pr-3 font-semibold">
             Experience
           </div>
 
@@ -97,7 +97,7 @@ const isActive: boolean = latestRole?.active === true
         </div>
 
         <div class="flex gap-3">
-          <div class="py-1 pr-3 shrink-0 font-semibold header-highlight-border">
+          <div class="header-highlight-border shrink-0 py-1 pr-3 font-semibold">
             Technologies
           </div>
 
@@ -107,7 +107,7 @@ const isActive: boolean = latestRole?.active === true
         </div>
       </div>
 
-      <div class="bg-white px-5 py-4 rounded-2xl">
+      <div class="rounded-2xl bg-white px-5 py-4">
         <div class="py-1 font-semibold">
           {featured?.question}&hellip;
         </div>
