@@ -1,4 +1,7 @@
 ---
+import '@/styles/global.css'
+import '@/styles/print.css'
+
 interface Props {
   title: string
   description?: string
@@ -13,7 +16,9 @@ const { title, description = '' } = Astro.props
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
+    <title>
+      {title}
+    </title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
   </head>
@@ -22,45 +27,3 @@ const { title, description = '' } = Astro.props
     <slot />
   </body>
 </html>
-
-<style is:global>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
-  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
-
-  :root {
-    font-family: 'DM Sans', sans-serif;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-
-    --header-bg-color: #fceca5;
-    --header-highlight-border-color: var(--header-bg-color);
-    --experience-highlight-bg-color: #b5eecb;
-  }
-
-  body {
-    margin: 0;
-    min-width: 320px;
-    @apply font-light;
-  }
-
-  .container {
-    @apply px-5;
-
-    &--loose {
-      @apply px-10;
-    }
-  }
-
-  @page {
-    /* size: A4; */
-    size: Letter portrait;
-    margin: 0.5in 0;
-  }
-
-  @page:first {
-    margin-top: 0;
-  }
-</style>

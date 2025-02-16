@@ -24,15 +24,19 @@ const isActive: boolean = active === true
     <icon class="fa-regular fa-building ml-1 self-center"></icon>
   </div>
 
-  <div class="shrink-0 text-xs font-normal">
+  <div class="shrink-0 text-xs font-normal capitalize">
     {formatDate(date.start)} - {isActive ? 'Present' : formatDate(date.end)}
   </div>
 </div>
 
-<div class="text-xs">{location}</div>
+<div class="text-xs">
+  {location}
+</div>
 
 <div class="mt-2 text-xs">
-  <div>{company.description}</div>
+  <div>
+    {company.description}
+  </div>
 
   <ul class="flex gap-1">
     {
@@ -46,19 +50,13 @@ const isActive: boolean = active === true
 <ul class="mt-3 flex gap-1 text-xs">
   {
     technologies.map((item) => (
-      <li class="experience-highlight rounded-full px-3 leading-loose">
-        {item}
-      </li>
+      <li class="bg-secondary rounded-full px-3 leading-loose">{item}</li>
     ))
   }
 </ul>
 
-<ul class="mt-3 list-inside list-disc text-sm leading-tight">
-  {description.map((item) => <li class="mt-2">{item}.</li>)}
+<ul
+  class="mt-3 flex list-inside list-disc flex-col gap-2 text-sm leading-tight marker:text-current/80"
+>
+  {description.map((item) => <li>{item}</li>)}
 </ul>
-
-<style>
-  .experience-highlight {
-    background-color: var(--experience-highlight-bg-color);
-  }
-</style>

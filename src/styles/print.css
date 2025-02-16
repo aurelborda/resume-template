@@ -1,0 +1,9 @@
+@page {
+  size: A4;
+  size: Letter portrait;
+  margin: 0.5in 0;
+}
+
+@page:first {
+  margin-top: 0;
+}

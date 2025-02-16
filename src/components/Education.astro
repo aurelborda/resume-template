@@ -18,15 +18,17 @@ const isActive: boolean = active === true
     <icon class="fa-solid fa-graduation-cap ml-1 self-center"></icon>
   </div>
 
-  <div class="shrink-0 text-xs font-normal">
+  <div class="shrink-0 text-xs font-normal capitalize">
     {formatDate(date.start)} - {isActive ? 'Present' : formatDate(date.end)}
   </div>
 </div>
 
-<div class="mt-1 text-sm">
-  <div>{institution.domain}</div>
+<div class="mt-0.5 text-sm">
+  {institution.domain}
 </div>
 
-<ul class="mt-3 list-inside list-disc text-sm leading-tight">
-  {institution.description.map((item) => <li class="mt-2">{item}.</li>)}
+<ul
+  class="mt-3 flex list-inside list-disc flex-col gap-2 text-sm leading-tight marker:text-current/80"
+>
+  {institution.description.map((item) => <li>{item}</li>)}
 </ul>
