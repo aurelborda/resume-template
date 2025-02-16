@@ -30,6 +30,7 @@ See the `sample-data` branch for an example résumé with sample data, or scroll
 > [!TIP]
 > Add the CSS style `page-break-before: always` or `page-break-after: always` to move the content to a new page.
 > As an alternative, you can use the `break-before-page` and `break-after-page` classes from Tailwind CSS, but be sure to rebuild the project.
+> To change the template colors, see the CSS variables for custom colors in the file `src/styles/global.css`.
 
 ## Preview
 
