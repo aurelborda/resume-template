@@ -29,7 +29,7 @@ const [featuredQuestion] = questions.filter((item) => item.featured === true)
 ---
 
 <Layout title={`${name.first} ${name.last} - Résumé`}>
-  <main>
+  <main class="flex flex-col gap-8 not-print:pb-8">
     <Header
       data={{
         name,
@@ -41,77 +41,69 @@ const [featuredQuestion] = questions.filter((item) => item.featured === true)
       }}
     />
 
-    <section class="pt-8">
-      <div class="container container--loose">
-        <header>
-          <h3 class="text-xl font-semibold">Work experience</h3>
-        </header>
+    <section class="flex flex-col gap-6 px-10">
+      <header>
+        <h3 class="text-xl font-semibold">Work experience</h3>
+      </header>
 
-        {
-          experience.map((item) => (
-            <article class="pt-6">
-              <Experience data={item} />
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="pt-8">
-      <div class="container container--loose">
-        <header>
-          <h3 class="text-xl font-semibold">Education</h3>
-        </header>
-
-        {
-          education.map((item) => (
-            <article class="pt-6">
-              <Education data={item} />
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="pt-8">
-      <div class="container container--loose">
-        <header>
-          <h3 class="text-xl font-semibold">Snippets</h3>
-        </header>
-
-        {
-          snippets.map((item) => (
-            <article class="pt-6 text-sm">
-              <Snippet data={item} />
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="py-8">
-      <div class="container container--loose">
-        <header>
-          <h3 class="text-xl font-semibold">More about me</h3>
-        </header>
-
-        <div class="grid grid-cols-2 gap-x-5">
-          {
-            questions.map(({ question, answer }) => (
-              <article class="pt-6 text-sm">
-                <Query title={`${question}&hellip;`} content={answer} />
-              </article>
-            ))
-          }
-
-          <article class="pt-6 text-sm">
-            <Query title="Interests" content={interests} />
+      {
+        experience.map((item) => (
+          <article>
+            <Experience data={item} />
           </article>
+        ))
+      }
+    </section>
 
-          <article class="pt-6 text-sm">
-            <Query title="Languages spoken" content={languages.join(', ')} />
+    <section class="flex flex-col gap-6 px-10">
+      <header>
+        <h3 class="text-xl font-semibold">Education</h3>
+      </header>
+
+      {
+        education.map((item) => (
+          <article>
+            <Education data={item} />
           </article>
-        </div>
+        ))
+      }
+    </section>
+
+    <section class="flex flex-col gap-6 px-10">
+      <header>
+        <h3 class="text-xl font-semibold">Snippets</h3>
+      </header>
+
+      {
+        snippets.map((item) => (
+          <article class="text-sm">
+            <Snippet data={item} />
+          </article>
+        ))
+      }
+    </section>
+
+    <section class="flex flex-col gap-6 px-10">
+      <header>
+        <h3 class="text-xl font-semibold">More about me</h3>
+      </header>
+
+      <div class="grid grid-cols-2 gap-x-5 gap-y-6">
+        {
+          questions.map(({ question, answer }) => (
+            <article class="text-sm">
+              <Query title={`${question}&hellip;`} content={answer} />
+            </article>
+          ))
+        }
+
+        <article class="text-sm">
+          <Query title="Interests" content={interests} />
+        </article>
+
+        <article class="text-sm">
+          <Query title="Languages spoken" content={languages.join(', ')} />
+        </article>
       </div>
     </section>
   </main>

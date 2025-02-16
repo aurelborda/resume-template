@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+
+  /* Custom colors */
+  --color-primary: #fceca5;
+  --color-secondary: #b5eecb;
+  --color-highlight: var(--color-primary);
+}
+
+@layer base {
+  html,
+  :host {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html {
+    min-width: 320px;
+  }
+
+  body {
+    font-weight: var(--font-weight-light);
+  }
+}
