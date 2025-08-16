@@ -17,3 +17,7 @@ node_modules/
 
 # macOS specific files
 .DS_Store
+
+# Git hooks
+.git/hooks/*.sample
+!.git/hooks/pre-commit
