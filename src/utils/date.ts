@@ -1,6 +1,6 @@
-import type { Date } from '@/types/resume'
+import type { PlainDate } from '@/types/resume'
 
-const formatDate = ({ month, year }: Date): string => `${month} ${year}`
+const formatDate = ({ month, year }: PlainDate): string => `${month} ${year}`
 
 export default {
   formatDate,

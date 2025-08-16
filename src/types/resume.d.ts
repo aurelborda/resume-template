@@ -21,14 +21,14 @@ export interface Company {
   url: string
 }
 
-export interface Date {
+export interface PlainDate {
   month: string
   year: number
 }
 
 export interface DateEntry {
-  start: Date
-  end: Date
+  start: PlainDate
+  end: PlainDate
 }
 
 export interface Link {
